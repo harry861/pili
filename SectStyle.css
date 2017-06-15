@@ -1,0 +1,51 @@
+  @font-face { font-family: "HG行書体";
+         src: url("HGRGY.TTC");
+         }
+
+body	    {font-size:30px;font-family: "HG行書体","HGP行書体",cursive, 標楷體; }
+
+div.messagetext {
+        font-size:70%;
+        color: orange;
+        overflow-y:auto;
+        overflow-x:hidden;
+        text-align:left;
+       background: rgba(0,0,0,0.6);
+       opacity: 0.75;
+        border:none;
+        height:100%;
+}
+div{
+    border: 5px solid rgba(50%,50%,70%,0.6);
+    border-radius:10px;
+}
+div.membertext {
+        font-size:80%;
+        color: yellow;
+        overflow-y:auto;
+        overflow-x:hidden;
+       background: rgba(0,0,0,0.6);
+       opacity: 0.75;
+       height:100%;
+}
+div.membertext div {
+    width:85%;
+        font-size:120%;
+        color: black;
+        border: 5px  rgba(70%,50%,0%,0.6);
+       background:	#C63300;
+       opacity: 1;
+       font-weight: bold;
+}
+div.membertext a{
+    color: royalblue;
+    text-decoration:none;
+}
+div.imgtext{
+    font-size:100%;
+    color:red;
+       -webkit-writing-mode: vertical-lr;
+        writing-mode:vertical-lr;
+        padding-left:20px;
+        background: rgba(0,0,0,0.6);
+}

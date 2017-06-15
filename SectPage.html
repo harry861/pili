@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>SectPage</title>
+    <link rel="stylesheet" type="text/css" href="SectStyle.css">
+    <style type="text/css">
+        body {
+        background-image: url("background.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            font-size: 50px;
+            color: rosybrown;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var SectArray = ["烈武壇",
+             "天佛原鄉",
+             "四大奇觀",
+             "欲界",
+             "天葬十三刀",
+             "葬刀會"]
+        var ImgArray = ["烈武壇.png",
+            "天佛原鄉.png",
+            "四大奇觀.png",
+            "欲界.png",
+            "天葬十三刀.png",
+            "葬刀會.png"]
+        var IntroductionArray = ["傳聞中，江湖一處罕有人知的能人異士麟薈之地，名喚「烈武壇」。烈武壇之人，以兄弟相交，情義相許，齧臂為誓，以表彼此不移之義。平時雖各自投身異地，但每逢兄弟有難，便會一呼百應，集結同心。成員以「三罡」及「九煞」組成，為綠林諸派奉為指標，其勢力分散各大組織，如超軼主所屬的「烽火鑑兵臺」、矩業烽曇所屬的「天佛原鄉」、痕江月所屬的「葬刀會」，皆在武林中佔有一席地位。超軼主為三罡之首「御龍天」，同時也是烽火鑑兵臺之主，昔日曾參與凋亡禁決而取得「流火陽鐵」，得以在猶夢玄湖地層下打造秘密武器「烽火關鍵」，並結合「烽火關鍵人」一頁書，乃未來拯救武林蒼生之關鍵轉機。",
+            "由唯識玉菩提匯聚眾生修佛意念所創，為虛幻與真實並存之地。佛鄉景貌更迭，等同見證了佛法傳世三大時期的變遷：正法時期，佛鄉金碧輝煌，七寶燦然；像法時期，則是一片斷壁殘垣。佛初始型態本為穢佛洗罪界，吸納眾佛修者原身罪業，待修為圓滿，再以修者本身功德淨化所負罪業。而歷經漫長歲月，天佛原鄉成為佛門崇高神秘的組織，然而，末法時代的來臨，卻也象徵天佛原鄉將面臨嚴峻的考驗。當厲族一脈肆虐苦境，樓至韋馱以天之佛身份，引領苦境佛宗抗衡，以四劍封印天之厲於無盡天峰。明白魔厲之禍將在苦境死灰復燃，天佛原鄉也就此隱遁幕後，靜待時機；然而，在魔族刻意佈局下，當素還真奏響希音之琴，和平約定告終，天閻魔城期盼已久的雪恥之戰將延燒武林，天佛原鄉也被迫做出因應......",
+            "四大奇觀分別為「風、雪、雲、煙」，是四個有別於苦境的特殊元素構成之地，內中之人多受其對應元素孕養而有特殊特質，並相對應到特有的建築奇觀。「戰雲界」乃雲海中的懸空城，是四大奇觀中唯一與苦境無陸接之地，以戰雲三驕為首，族人驍勇善戰，功體帶有雷電之力，能制服巨魔神；「冰樓」是由千年奇雪寒冰雕成的參天雪堡，其人帶有冰霜寒晶，冰樓之凍寒會奪人體溫，生人難以靠近；「煙都」則由煙墨織城而造，豔絕當世，其族人以受宮禮為榮，依能力分為陵、宮、亭三大階級；「馭風島」為風所築，飄渺壯闊，未曾有人一窺全貌。四奇觀彼此之間功體相剋，冰剋風、風剋煙、煙剋雲、雲剋冰，故表面上交誼深厚，但檯面下則是暗潮洶湧。",
+            "欲界第六天是一個龐大且信仰者眾多的組織，凡其成員皆忠誠地信奉魔佛，本身並不屬於正統佛法體制範疇，亦不信奉任何佛法，一切奉波旬之令為法、奉波旬之言為命。「波旬」象徵管理欲界悲、怒、殺之無上魔佛，在魔佛未甦醒之前則由「首座」、「釋尊」代理執掌，另有「法寂院」、「靈弒堂」、「利刃天」、八方分壇等強大勢力。詩云：「我佛我念波羅海，至聖至真幽冥界，求私求惡人間道，超然超脫欲殺僧。」不難看出欲界縱橫三界、唯我獨尊之野心，亦被視為天下亂世之源。",
+            "天葬十三刀，是指一个地點，一个至今誰也找不到的地方。内中包含擁有各種神技的奇異高手，成員人數不止十三人。天葬十三刀被外来组织渗透已久，成員並不单纯。千窟石壁，天葬十三刀的神秘入口，此地在不同的时間會有不同出路的變化",
+            ""]
+        var MemberArray = ["三罡: 御龍天-超逸主 青霜台-暮成雪 點鋒座-判死生 九煞: 風雪一路禪 矩業鋒曇 君舍迫 星狼弓 叕漢老大 雁如鴻 謗春秋 做寇才子 痕江月",
+            "創始: 玉菩提 傳承: 沐靈山 天羅子 俠菩提 赮畢鉢羅 主事/領導: 天之象徵-樓至韋馱 地之象徵-蘊果諦魂 深闕主事-裳瓔珞 三座: 審座-矩業烽曇 師座-誕宗遙 慧座-忘塵緣 天佛五相: 欲明王 恆沙普賢 硨磲佛母 慧寧師 招提僧 天王四護: 凡七夜 劍通慧 葦江渡 爾善多 三相修羅: 陀刑戒 敵相燄空 焦相觀黑",
+            "戰雲界-戰雲三驕: 鳳座-朝天驕 絕代天驕 御宇天驕 戰雲界-戰雲雙擘: 造烽煙 寰無疆 戰雲界-其他: 銀河殛 星夜窮奇 胤蒼狼 曦眼蒼鶻 冰火饕餮 冰樓-皇室: 冰王-玄冥氏 公主-霜旒玥珂 仲王-謎獨白 冰樓-其他: 副樓主-鏤冰氏 追霰 雪飛狐 煙都-大宗師: 古陵逝煙 煙都-宮: 西宮-西宮弔影 丹宮-宮無后 守宮-涼守宮 千宮-痕千古 煙都-其他: 鶴亭凌空輓亭憑月 雨亭滴命 商亭飄隱 亭風缺 馭風島: 一劍風徽杜舞雩",
+			"魔佛: 波旬 閻達 女琊 迷達 初天: 犍羅金剛 二天: 須彌帝釋 三天: 律懲王 四天: 譴彌勒 五天: 涯十滅 輔座: 忘塵緣 洗罪三尊: 無戒悲航 玄定怒航 赤慧慈航 其他: 部洲神將 部洲天護 佛戰 善法衛 惡法衛 鳴中孚、缺天赤",
+            "鰲首: 一色秋 其他: 痕千古 別黃昏 北狗 扇留香 花千樹 風簷公子 上官圓缺 渾千手 黃羽客 艳子狸 絕琴先生 喫神",
+            "司權: 戚太祖 聖主: 盛華年 授督: 痕江月 公: 衛公-篤常春 碩公-命天荒 其他: 冷十四 風波惡 主庸蚩命 知冷松八 城雁流悲 哀時命"]
+        var MemberLink = ["MemberPage.html?0?#444444 http://drama.pili.com.tw/role/muchenxuie/",
+            "",
+            "",
+            "",
+            "",
+            ""]
+        function markMember(i) {
+            var linkN = 0;
+            var link = MemberLink[i].split(" ");
+            var tmp = MemberArray[i].split(" ");
+            console.log(link);
+            for (var tag in tmp) {
+                if (tag == 0) {
+                    document.getElementById("MemberDiv").innerHTML = "<center><div>" + tmp[tag];
+                }
+                else if (tmp[tag].indexOf(":") != -1) {
+                    document.getElementById("MemberDiv").innerHTML += "<hr/><center><div>" + tmp[tag];
+                }
+                else {
+                    if ((linkN in link) &&(link[linkN]!="")) { document.getElementById("MemberDiv").innerHTML += "&nbsp;&nbsp;<a href='" + link[linkN] + "'>" + tmp[tag] + "<a/><br/>"; linkN++;}
+                    else { document.getElementById("MemberDiv").innerHTML += "&nbsp;&nbsp;" + tmp[tag] + "<br/>"; linkN++; }
+                }
+            }
+        }
+        function setup() {
+            //URL
+            var url = location.href;
+            //取得問號之後的值
+            var temp = url.split("?");
+            console.log(temp[1]);
+            var i = parseInt(temp[1]);
+            document.getElementById("ImgDiv").innerHTML = "<center>" + SectArray[i] + "<br/><img src='" + ImgArray[i] + "' style='position:relative; height:95%;padding-left:20px;' />";
+            document.getElementById("IntroductionDiv").innerHTML = "<p style='margin:3px;'>" + IntroductionArray[i] + "<p/>";
+            markMember(i);
+        }
+    </script>
+</head>
+<body onload="setup()">
+    <div id="ImgDiv" class="imgtext" style="top:5%; left:2%; position:absolute; width:40%;height:40%"></div>
+    <div style="top:50%; left:2%; position:absolute; width:41%;height:40%; padding:5px;">
+        <div id="IntroductionDiv" class="messagetext"></div>
+    </div>
+    
+    <div id="MemberDiv" class="membertext" style="top:5%; left:46%; position:absolute; width:50%;height:85%; padding:5px;"></div>
+</body>
+</html>

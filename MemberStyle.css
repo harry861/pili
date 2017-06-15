@@ -1,0 +1,53 @@
+  @font-face { font-family: "HG行書体";
+         src: url("HGRGY.TTC");
+         }
+
+body	    {font-size:30px;font-family: "HG行書体","HGP行書体",cursive, 標楷體; }
+
+div.messagetext {
+        font-size:70%;
+        color: orange;
+        overflow-y:auto;
+        overflow-x:hidden;
+        text-align:left;
+       background: rgba(0,0,0,0.8);
+       opacity: 0.75;
+        border:none;
+        height:100%;
+}
+
+div.membertext {
+        font-size:80%;
+        color: yellow;
+        overflow-y:auto;
+        overflow-x:hidden;
+       background: rgba(0,0,0,0.8);
+       opacity: 0.75;
+       height:100%;
+}
+
+div.poetrytext{
+    border:none;
+    border-radius:2%;
+    line-height: 110%;
+    font-size:80%;
+     font-weight: bold;
+}
+div.imgtext{
+    font-size:100%;
+    color:red;
+       -webkit-writing-mode: vertical-lr;
+        writing-mode:vertical-lr;
+        padding-left:20px;
+        background: rgba(0,0,0,0.4);
+}
+
+div.nametext{
+    color:white;
+    background: rgba(0,0,0,0.8);
+}
+
+div{
+    border: 5px solid rgba(50%,50%,70%,0.8);
+    border-radius:10px;
+}

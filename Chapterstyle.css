@@ -1,0 +1,135 @@
+  @font-face { font-family: "HG行書体";
+         src: url("HGRGY.TTC");
+         }
+
+body	    {font-size:30px;font-family: "HG行書体","HGP行書体",cursive, 標楷體;color:yellow; }
+nav		{ 
+         color:white;
+         font-size:40px;
+         border: 2px solid rgba(0%,90%,0%,0.6);
+         width:25%;
+         background-color:rgba(0%,90%,0%,0.6);
+         border-radius:10px;
+         margin:10%;
+         margin-bottom:15px;
+         margin-top:15px;
+         }
+         nav ul	{display:none;
+         list-style:none;
+         margin:0;
+         padding:0;
+         border-radius:10px;
+         }
+         nav:hover ul{display: block;}
+         nav ul li	{border-top: 2px solid rgba(0%,90%,0%,0.6);
+         background-color: rgba(100%,80%,100%,0.6);
+         width:100%;
+         color: black;
+         border-radius:10px;
+         }
+nav ul li:hover	{background-color:rgba(50%,50%,100%,0.6);}
+div.titletext	{
+	position: absolute; 
+			top: 9%; 
+			left: 55%; 
+			margin: 0px;
+            width:50%;
+            height:10%;
+            font-size:40px;
+            opacity: 0.75;
+			}
+div.messagetext {
+    	position: absolute; 
+			top: 20%; 
+			left: 55%; 
+			margin: 0px;
+            width:35%;
+            height:68%;
+           overflow-y:auto;
+        overflow-x:hidden;
+            background: rgba(0,0,0,0.6);
+            opacity: 0.75;
+			 }
+div.movietext {
+    	position:absolute;
+            top: 43%;  
+			left: 9%; 
+			margin: 0px;
+			}
+
+
+*{
+	margin:0;
+	padding:0;}
+.menu{ text-align:center;
+       border-radius:10px;
+	background:url(steel.png) repeat left top;
+	letter-spacing:-3px;}
+.menu li{
+	display:block;
+    border-radius:10px;
+	letter-spacing:0;}
+.menu li a{
+	display:inline-block;
+    border-radius:10px;
+	height:40px;
+    width:100%;
+	line-height:40px;
+	position:relative;
+	top:1px;
+	color: #FF0;
+	text-shadow:0 0 10px #000;
+	text-decoration:none;
+
+	box-shadow:0 0 5px #000 inset;}
+.menu li a:before,
+.menu li a:after{
+	content:attr(alt);
+	display:block;
+	position:absolute;
+	z-index:2;
+	left:0;
+	top:0;
+	height:20px;
+    width:100%;
+	overflow:hidden;
+    border-radius:10px;
+	color:#FFF;
+	-webkit-backface-visibility:hidden;
+	backface-visibility:hidden;
+	-webkit-transition:.3s;
+	transition:.3s;
+	text-shadow:0 0 5px #000, 0 0 10px #000, 0 0 10px #000, 0 0 10px #000;}
+.menu li a:before{
+	background-color:rgba(0%,90%,0%,0.6);
+	-webkit-transform-origin:center center -20px;
+	-webkit-transform:perspective(200px) rotateX(0deg) translateZ(-20px);
+	transform-origin:center center -20px;
+	transform:perspective(200px) rotateX(0deg) translateZ(-20px);}
+.menu li a:after{
+	top:20px;
+	line-height:2px;
+	background-color:rgba(0%,90%,0%,0.6);
+	-webkit-transform-origin:center center -20px;
+	-webkit-transform:perspective(200px) rotateX(0deg) translateZ(-20px);
+	transform-origin:center center -20px;
+	transform:perspective(200px) rotateX(0deg) translateZ(-20px);}
+.menu li a:hover:before{
+	-webkit-transform:perspective(200px) rotateX(45deg);
+	transform:perspective(200px) rotateX(65deg);
+	}
+.menu li a:hover:after{
+	-webkit-transform:perspective(200px) rotateX(-45deg);
+	transform:perspective(200px) rotateX(-65deg);
+	}
+.menu li:nth-child(2) a:before,
+.menu li:nth-child(2) a:after{
+	background-position:-5px -1px;}
+.menu li:nth-child(3) a:before,
+.menu li:nth-child(3) a:after{
+	background-position:-3px -1px;}
+.menu li:nth-child(4) a:before,
+.menu li:nth-child(4) a:after{
+	background-position:2px -1px;}
+
+

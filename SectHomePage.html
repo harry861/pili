@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>SectHomePage</title>
+    <style type="text/css">
+         @font-face { font-family: "HG行書体";
+         src: url("HGRGY.TTC");
+         }
+        body {
+            font-family: "HG行書体","HGP行書体",cursive, 標楷體; 
+            background-image: url("SectBackground.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            font-size: 600%;
+            color:brown;
+        }
+        a{
+            text-decoration:none;
+            color:brown;
+        }
+        .swiper-pagination-bullet {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            border-radius: 100%;
+            background: #FFF;
+            opacity: 0.8;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: 	#00FFFF;
+        }
+
+        .swiper-pagination-bullet:hover {
+            opacity: 1.5;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var now = 0;
+        function goright() {
+            now++;
+            var k = document.getElementById("main").scrollLeft;
+            var docw = $("#tmp").width();
+            console.log(k);
+            $("span").removeClass("swiper-pagination-bullet-active");
+            $("#to" + (now+1)).addClass("swiper-pagination-bullet-active");
+            if (now == 7) {
+                $("#main").animate({
+                    scrollLeft: $("#main").scrollLeft() - (7 * docw)
+                }, 0, function () { });
+                now = 1;
+                $("span").removeClass("swiper-pagination-bullet-active");
+                $("#to2").addClass("swiper-pagination-bullet-active");
+            }
+            if (now == 6) {
+                $("span").removeClass("swiper-pagination-bullet-active");
+                $("#to1").addClass("swiper-pagination-bullet-active");
+            }
+        }
+        function goleft() {
+            now--;
+            var k = document.getElementById("main").scrollLeft;
+            var docw = $("#tmp").width();
+            $("span").removeClass("swiper-pagination-bullet-active");
+            $("#to" + (now+1)).addClass("swiper-pagination-bullet-active");
+            if (now == -1) {
+                $("#main").animate({
+                    scrollLeft: $("#main").scrollLeft() + (7 * docw)
+                }, 0, function () { });
+                now = 5;
+                $("span").removeClass("swiper-pagination-bullet-active");
+                $("#to6").addClass("swiper-pagination-bullet-active");
+            }
+        }
+        function tosome(i) {
+            var docw = $("#tmp").width();
+            $("#main").animate({
+                scrollLeft: (i-1) * docw
+            }, 700, function () { });
+            $("span").removeClass("swiper-pagination-bullet-active");
+            $("#to" + i).addClass("swiper-pagination-bullet-active");
+            now = i - 1;
+        }
+        $(document).ready(function () {
+            var docw = $("#tmp").width();
+            $("#right").click(function () {
+                $("#main").animate({
+                    scrollLeft: $("#main").scrollLeft() + docw
+                }, 700, function () { });
+            });
+            $("#left").click(function () {
+                $("#main").animate({
+                    scrollLeft: $("#main").scrollLeft() - docw
+                }, 700, function () { });
+            });
+        });
+    </script>
+</head>
+<body>
+    <img id="left" onclick="goleft() " src="http://pic.pimg.tw/appmarket/1337245961-1958403486.png?v=1337245962" style="top: 46%; left: 8%; z-index:3;position: absolute; " />
+    <img id="right" onclick="goright() " src="http://pic.pimg.tw/appmarket/1337245961-1895570752.png" style="top: 46%; left: 89%; z-index:3;position: absolute; ">
+    <div id="main" style="top:10%; left:15%; margin: 0px; overflow: hidden; width: 71%; height: 80%;position:absolute;">
+        <div style="width:700%;height:100%">
+            <a href="SectPage.html?0">
+                <div id="tmp" class="left" style="float:left;width:14.28%;height:100%; padding-top:0.5%;"><center>烈武壇<br /><img src="烈武壇.png" width="70%" /></strong></center></div>
+            </a>
+            <a href="SectPage.html?1">
+                <div id="tmp2" class="left" style="float:left;width:14.28%;height:100%; padding-top:0.5%;"><center>天佛原鄉<br /><img src="天佛原鄉.png" width="70%" /></strong></center></div>
+            </a>
+            <a href="SectPage.html?2">
+                <div id="tmp3" class="left" style="float:left;width:14.28%;height:100%; padding-top:0.5%;"><center>四大奇觀<br /><img src="四大奇觀.png" width="70%" /></strong></center></div>
+            </a>
+            <a href="SectPage.html?3">
+                <div id="tmp4" class="left" style="float:left;width:14.28%;height:100%; padding-top:0.5%;"><center>欲界<br /><img src="欲界.png" width="70%" /></strong></center></div>
+            </a>
+            <a href="SectPage.html?4">
+                <div id="tmp5" class="left" style="float:left;width:14.28%;height:100%; padding-top:0.5%;"><center>天葬十三刀<br /><img src="天葬十三刀.png" width="70%" /></strong></center></div>
+            </a>
+            <a href="SectPage.html?5">
+                <div id="tmp6" class="left" style="float:left;width:14.28%;height:100%; padding-top:0.5%;"><center>葬刀會<br /><img src="葬刀會.png" width="70%" /></strong></center></div>
+            </a>
+            <a href="SectPage.html?0">
+                <div id="tmp1" class="left" style="float:left;width:14.28%;height:100%; padding-top:0.5%;"><center>烈武壇<br /><img src="烈武壇.png" width="70%" /></strong></center></div>
+            </a>
+</div>
+    </div>
+
+    <div  style="top:83%;left:38%;position:absolute;">
+        <span id="to1" onclick="tosome(1)" class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+        <span id="to2" onclick="tosome(2)" class="swiper-pagination-bullet"></span>
+        <span id="to3" onclick="tosome(3)" class="swiper-pagination-bullet"></span>
+        <span id="to4" onclick="tosome(4)" class="swiper-pagination-bullet"></span>
+        <span id="to5" onclick="tosome(5)" class="swiper-pagination-bullet"></span>
+        <span id="to6" onclick="tosome(6)" class="swiper-pagination-bullet"></span>
+    </div>
+</body>
+</html>

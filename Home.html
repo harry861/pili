@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+        body {
+            background-image: url("background.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            font-size: 50px;
+            color: green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("div").hide();
+            $("img").fadeIn(3000);
+            $("div").fadeIn(3000);
+            $("#Tital").animate({ fontSize: '200%' }, 3000);
+            $("#Img1").mouseover(function () {
+                $("#Img1").css({
+                    height: '54%',
+                    width: '22%',
+                    opacity: '1'
+                });
+                $("#Img2").css("opacity", 0.5);
+                $("#Img3").css("opacity", 0.5);
+                $("#Div1").css("font-size", "120%");
+                $("#Div2").hide();
+                $("#Div3").hide();
+            });
+            $("#Img2").mouseover(function () {
+                $("#Img2").css({
+                    height: '54%',
+                    width: '33%',
+                    opacity: '1'
+                });
+                $("#Img1").css("opacity", 0.5);
+                $("#Img3").css("opacity", 0.5);
+                $("#Div2").css("font-size", "120%");
+                $("#Div1").hide();
+                $("#Div3").hide();
+            });
+            $("#Img3").mouseover(function () {
+                $("#Img3").css({
+                    height: '54%',
+                    width: '38%',
+                    opacity: '1'
+                });
+                $("#Img2").css("opacity", 0.5);
+                $("#Img1").css("opacity", 0.5);
+                $("#Div3").css("font-size", "120%");
+                $("#Div2").hide();
+                $("#Div1").hide();
+            });
+            $("img").mouseout(function () {
+                $("img").css({
+                    height: '50%',
+                    opacity: '1'
+                });
+                $("#Img1").css("width", "20%");
+                $("#Img2").css("width", "30%");
+                $("#Img3").css("width", "35%");
+                $("div").css("font-size", "100%");
+                $("div").show();
+            });
+        });
+        function playSound() {
+                var video = document.getElementById("Video1");
+                var button = document.getElementById("play");
+                if (video.paused) {
+                    video.play();
+                    button.value = "||";
+                } else {
+                    video.pause();
+                    button.value = ">";
+                }
+        }
+    </script>
+</head>
+<body>
+    <audio id="Video1" controls autoplay loop style="display:none;">
+        <source src="music.mp3" type="audio/mp3">
+        <source src="music.ogg" type="audio/ogg">
+    </audio><!--背景音樂-->
+    <input id="play" name="play" type="button" value="||" onclick="playSound()" />
+       <p id="Tital" align="center" style="z-index:1; font-size: 0%;margin-top: 7%;">霹靂之轟動武林</p>
+        <a href="ChapterPage.html">
+            <img id="Img1" class="note" height="50%" width="20%" style="top: 28%; left: 7%; z-index:2;opacity:1;display:none;" src="img01.png" />
+
+            <div id="Div1" class="notetext" style="top: 62%; left: 10%; z-index:3;color:orangered;"><p>各集資料</p></div>
+        </a>
+
+    <a href="SectHomePage.html">
+        <img id="Img2" class="note" height="50%" width="30%" style="top: 37%; left: 34%;  z-index:2;opacity:1;display:none;" src="img02.png" />
+        <div id="Div2" class="notetext" style="top:72%; left: 43%; z-index:3;color:blue;"><p>派系介紹</p></div>
+    </a>
+
+    <a href="DeskPage.html">
+        <img id="Img3" class="note" height="50%" width="35%" style="top: 30%; left: 62%;  z-index:2;opacity:1;display:none;" src="img03.png" />
+        <div id="Div3" class="notetext" style="top:59%; left: 73%; z-index:3;color:yellow;"><p>桌布圖片</p></div>
+    </a>
+</body>
+</html>

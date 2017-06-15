@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MemberPage</title>
+    <link rel="stylesheet" type="text/css" href="MemberStyle.css">
+    <style type="text/css">
+        body {
+            background-image: url("background.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+            font-size: 50px;
+            color: rosybrown;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var NameArray = ["御龍天-超逸主",
+            "",
+            "",
+            "",
+            "",
+            ""]
+        var ImgArray = ["超軼主.jpg",
+            "",
+            "",
+            "",
+            "",
+            ""]
+        var PoetryArray = ["由來泉石潛蛟龍，<br/>不經烽火不現蹤；<br/>風雲豈是蒼天主？<br/>拈作軒冕上九重。",
+            "",
+            ""]
+        var IntroductionArray = ["烈武壇三罡之「御龍天」，亦是烽火鑑兵臺之主，沉穩而具風雅氣度，名列五大傳奇之一「南冕」。久遠前與七修創者一戰後重創而銷聲匿跡，得策夢侯以八品神通治癒。對流火陽鐵失落一事極為關切，言明此乃烽火之關鍵。",
+             "",
+            "",
+            "",
+            "",
+            ""]
+        var DataArray = ["性別: 男 初登場: 霹靂驚鴻之刀劍春秋-第13集 來自: 烈武壇 稱號: 風軒雲冕、南冕 根據地: 滿篁瀟湘、天雅閣 身份: 烽火鑑兵臺之主、烈武壇三罡之「御龍天」 結義: 暮成雪、判死生(烈武壇三罡)、矩業烽曇、風雪一路禪、君舍魄、叕漢老大、痕江月、星狼弓、雁如鴻、謗春秋、做寇才子(烈武壇九煞) 朋友: 戚太祖、癲不亂、歐陽堇 組織門派: 烽火鑑兵臺 部屬: 天留吾不留、沉紫袖、習英英",
+             "",
+            "",
+            "",
+            "",
+            ""]
+        function markData(i) {
+            var tmp = DataArray[i].split(" ");
+            for (var tag in tmp) {
+                if (tag == 0) {
+                    document.getElementById("DataDiv").innerHTML = "<span style='color:#33FFAA'>" + tmp[tag] + "<span/>&nbsp;";
+                }
+                else if (tmp[tag].indexOf(":") != -1) {
+                    document.getElementById("DataDiv").innerHTML += "<br/><span style='color:#33FFAA'>" + tmp[tag] + "<span/>&nbsp;";
+                }
+                else {
+                    document.getElementById("DataDiv").innerHTML +=  tmp[tag] ;
+                }
+            }
+        }
+        function setup() {
+            //URL
+            var url = location.href;
+            //取得問號之後的值
+            var temp = url.split("?");
+            console.log(temp[1]);
+            var i = parseInt(temp[1]);
+            $("#PoetryDiv").css("color", temp[2]);
+            document.getElementById("ImgDiv").innerHTML = "<img src='" + ImgArray[i] + "' style='position:relative; width:60%; padding-left:5px; left:18%' />";
+            document.getElementById("PoetryDiv").innerHTML = "<center><strong><p style='margin-top:10px;'>" + PoetryArray[i];
+            document.getElementById("NameDiv").innerHTML = "<center><strong>" + NameArray[i] + "<strong/><center/>";
+            document.getElementById("IntroductionDiv").innerHTML = "<p style='margin:3px;'>" + IntroductionArray[i] + "<p/>";
+            markData(i);
+        }
+    </script>
+</head>
+<body onload="setup()">
+    <div id="ImgDiv" class="imgtext" style="top:3%; left:2%; position:absolute; width:93%;height:87%;z-index:1;"></div>
+    <div id="PoetryDiv" class="poetrytext" style="top:5%; left:45%; position:absolute; width:40%;height:38%; z-index:2;"></div>
+    <div id="NameDiv" class="nametext" style="top:92%; left:2%; position:absolute; width:41.5%;height:8%; padding-top:1%;"></div>
+    <div style="top:104%; left:2%; position:absolute; width:41%;height:28%; padding:5px; margin-bottom:1%;">
+        <div id="IntroductionDiv" class="messagetext"></div>
+    </div>
+    <div id="DataDiv" class="membertext" style="top:92%; left:46%; position:absolute; width:50%;height:40%; padding:5px;margin-bottom:1%;"></div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+  @font-face { font-family: "HG行書体";
+         src: url("HGRGY.TTC");
+         }
+body	    {	font-family: "HG行書体","HGP行書体",cursive, 標楷體; }
+
+a	{text-decoration:none;}
+
+div.notetext {	position: absolute; 
+			top: 0px; 
+			left: 0px; 
+			margin: 0px;
+            width:250px;
+            opacity: 0.75;
+			 }
+			
+img.note    {	position: absolute; 
+			top: 0px; 
+			left: 0px; }	
