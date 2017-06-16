@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+        body {
+            background-color: black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var ImgArray = ["assets/img/shots/1.jpg",
+            "assets/img/shots/2.jpg",
+           "assets/img/shots/5.jpg",
+           "assets/img/shots/6.jpg",
+           "assets/img/shots/9.jpg",
+           "assets/img/shots/10.jpg",
+           "assets/img/shots/19.jpg",
+           "assets/img/shots/11.jpg",
+           "assets/img/shots/27.jpg",
+           "assets/img/shots/21.jpg",
+           "assets/img/shots/13.jpg",
+           "assets/img/shots/14.jpg",
+           "assets/img/shots/15.jpg",
+           "assets/img/shots/28.jpg",
+           "assets/img/shots/7.jpg",
+           "assets/img/shots/8.jpg",
+           "assets/img/shots/17.jpg",
+           "assets/img/shots/18.jpg",
+           "assets/img/shots/20.jpg",
+           "assets/img/shots/3.jpg",
+           "assets/img/shots/4.jpg",
+           "assets/img/shots/22.jpg",
+           "assets/img/shots/23.jpg",
+           "assets/img/shots/24.jpg",
+           "assets/img/shots/25.jpg",
+           "assets/img/shots/12.jpg",
+           "assets/img/shots/26.jpg",
+           "assets/img/shots/16.jpg",
+           "assets/img/shots/29.jpg",
+           "assets/img/shots/30.png",
+           "assets/img/shots/31.png",
+            "assets/img/shots/32.png"]
+        function setup() {
+            //URL
+            var url = location.href;
+            //取得問號之後的值
+            var temp = url.split("?");
+            console.log(temp[1]);
+            var i = parseInt(temp[1]);
+            $("img").attr("src", ImgArray[i]);
+        }
+
+    </script>
+</head>
+<body onload="setup()">
+    <center><img /></center>
+</body>
+</html>
