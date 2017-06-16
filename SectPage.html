@@ -19,11 +19,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         var SectArray = ["烈武壇",
-             "天佛原鄉",
-             "四大奇觀",
-             "欲界",
-             "天葬十三刀",
-             "葬刀會"]
+            "天佛原鄉",
+            "四大奇觀",
+            "欲界",
+            "天葬十三刀",
+            "葬刀會"]
         var ImgArray = ["烈武壇.png",
             "天佛原鄉.png",
             "四大奇觀.png",
@@ -39,15 +39,15 @@
         var MemberArray = ["三罡: 御龍天-超逸主 青霜台-暮成雪 點鋒座-判死生 九煞: 風雪一路禪 矩業鋒曇 君舍迫 星狼弓 叕漢老大 雁如鴻 謗春秋 做寇才子 痕江月",
             "創始: 玉菩提 傳承: 沐靈山 天羅子 俠菩提 赮畢鉢羅 主事/領導: 天之象徵-樓至韋馱 地之象徵-蘊果諦魂 深闕主事-裳瓔珞 三座: 審座-矩業烽曇 師座-誕宗遙 慧座-忘塵緣 天佛五相: 欲明王 恆沙普賢 硨磲佛母 慧寧師 招提僧 天王四護: 凡七夜 劍通慧 葦江渡 爾善多 三相修羅: 陀刑戒 敵相燄空 焦相觀黑",
             "戰雲界-戰雲三驕: 鳳座-朝天驕 絕代天驕 御宇天驕 戰雲界-戰雲雙擘: 造烽煙 寰無疆 戰雲界-其他: 銀河殛 星夜窮奇 胤蒼狼 曦眼蒼鶻 冰火饕餮 冰樓-皇室: 冰王-玄冥氏 公主-霜旒玥珂 仲王-謎獨白 冰樓-其他: 副樓主-鏤冰氏 追霰 雪飛狐 煙都-大宗師: 古陵逝煙 煙都-宮: 西宮-西宮弔影 丹宮-宮無后 守宮-涼守宮 千宮-痕千古 煙都-其他: 鶴亭凌空輓亭憑月 雨亭滴命 商亭飄隱 亭風缺 馭風島: 一劍風徽杜舞雩",
-			"魔佛: 波旬 閻達 女琊 迷達 初天: 犍羅金剛 二天: 須彌帝釋 三天: 律懲王 四天: 譴彌勒 五天: 涯十滅 輔座: 忘塵緣 洗罪三尊: 無戒悲航 玄定怒航 赤慧慈航 其他: 部洲神將 部洲天護 佛戰 善法衛 惡法衛 鳴中孚、缺天赤",
+			"魔佛: 波旬 閻達 迷達 霽無瑕 初天: 犍羅金剛 二天: 須彌帝釋 三天: 律懲王 四天: 譴彌勒 五天: 涯十滅 輔座: 忘塵緣 洗罪三尊: 無戒悲航 玄定怒航 赤慧慈航 其他: 部洲神將 部洲天護 佛戰 善法衛 惡法衛 鳴中孚、缺天赤",
             "鰲首: 一色秋 其他: 痕千古 別黃昏 北狗 扇留香 花千樹 風簷公子 上官圓缺 渾千手 黃羽客 艳子狸 絕琴先生 喫神",
             "司權: 戚太祖 聖主: 盛華年 授督: 痕江月 公: 衛公-篤常春 碩公-命天荒 其他: 冷十四 風波惡 主庸蚩命 知冷松八 城雁流悲 哀時命"]
-        var MemberLink = ["MemberPage.html?0?#444444 MemberPage.html?1?#444444",
-            "       MemberPage.html?2?#444444 MemberPage.html?3?#444444",
-            "MemberPage.html?4?#444444          MemberPage.html?5?#444444      MemberPage.html?6?#444444         MemberPage.html?7?#444444",
-            " MemberPage.html?8?#444444 MemberPage.html?9?#444444 MemberPage.html?10?#444444",
-            "",
-            ""]
+        var MemberLink = ["MemberPage.html?0?#444444 MemberPage.html?1?#444444 MemberPage.html?16?#444444  MemberPage.html?3?#444444       MemberPage.html?14?#444444",
+            " MemberPage.html?17?#444444      MemberPage.html?2?#444444 MemberPage.html?3?#444444  MemberPage.html?15?#444444",
+            "MemberPage.html?4?#444444 MemberPage.html?18?#444444         MemberPage.html?5?#444444      MemberPage.html?6?#444444    MemberPage.html?13?#444444     MemberPage.html?7?#444444",
+            "MemberPage.html?19?#444444 MemberPage.html?8?#444444 MemberPage.html?9?#444444 MemberPage.html?10?#444444      MemberPage.html?15?#444444",
+            "MemberPage.html?11?#444444 MemberPage.html?13?#444444  MemberPage.html?20?#444444",
+            "MemberPage.html?12?#444444 MemberPage.html?21?#444444 MemberPage.html?14?#444444"]
         function markMember(i) {
             var linkN = 0;
             var link = MemberLink[i].split(" ");
@@ -77,6 +77,12 @@
             document.getElementById("IntroductionDiv").innerHTML = "<p style='margin:3px;'>" + IntroductionArray[i] + "<p/>";
             markMember(i);
         }
+        $(document).ready(function () {
+            $("div").hide();
+            $("#ImgDiv").fadeIn(2000);
+            $("#MemberDiv").fadeIn(3500);
+            $("div").fadeIn(4500);
+        });
     </script>
 </head>
 <body onload="setup()">
@@ -86,5 +92,6 @@
     </div>
     
     <div id="MemberDiv" class="membertext" style="top:5%; left:46%; position:absolute; width:50%;height:85%; padding:5px;"></div>
+    <a href="Home.html"><img src="GoHome.png" style="left:95%; top:93%; position:absolute;height:6%;" /></a>
 </body>
 </html>

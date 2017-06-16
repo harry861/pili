@@ -88,6 +88,8 @@
             now = i - 1;
         }
         $(document).ready(function () {
+            $("div").hide();
+            $("div").fadeIn(3000);
             var docw = $("#tmp").width();
             $("#right").click(function () {
                 $("#main").animate({
@@ -139,5 +141,6 @@
         <span id="to5" onclick="tosome(5)" class="swiper-pagination-bullet"></span>
         <span id="to6" onclick="tosome(6)" class="swiper-pagination-bullet"></span>
     </div>
+    <a href="Home.html"><img src="GoHome.png" style="left:95%; top:93%; position:absolute;height:6%;" /></a>
 </body>
 </html>
